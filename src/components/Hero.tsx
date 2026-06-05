@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
-import { ArrowDown, Cpu, Code2, Layers, Sparkles } from 'lucide-react';
+import { ArrowDown, Sparkles } from 'lucide-react';
+import fotoPerfil from '../assets/foto-perfil.png';
 
 export default function Hero() {
   const handleScrollToProjects = (e: React.MouseEvent<HTMLAnchorElement>) => {
@@ -111,114 +112,20 @@ export default function Hero() {
           </motion.div>
         </div>
 
-        {/* Right Conceptual Bento Box Grid/Visualizer */}
+        {/* Right Column: Profile Photo */}
         <motion.div
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="lg:col-span-5 relative w-full aspect-[4/3] sm:aspect-[4/3] md:aspect-video lg:aspect-square flex items-center justify-center"
+          className="lg:col-span-5 relative flex justify-center items-center w-full mt-10 lg:mt-0"
         >
-          {/* Glassmorphism HMI / PLC Visualizer Card */}
-          <div className="relative w-full max-w-[420px] rounded-3xl overflow-hidden glass-panel p-6 border border-white/10 shadow-2xl relative">
-            <div className="flex items-center justify-between border-b border-white/5 pb-4 mb-4">
-              <div className="flex items-center space-x-2">
-                <span className="w-3 h-3 rounded-full bg-red-500"></span>
-                <span className="w-3 h-3 rounded-full bg-yellow-500"></span>
-                <span className="w-3 h-3 rounded-full bg-green-500"></span>
-              </div>
-              <div className="text-xs font-mono text-slate-500">SYSTEM_MONITOR.log</div>
-            </div>
-
-            {/* Simulated industrial PLC monitor and HMI */}
-            <div className="space-y-4">
-              {/* Telemetry lights */}
-              <div className="grid grid-cols-3 gap-3">
-                <div className="bg-slate-900/60 rounded-xl p-3 border border-white/5 flex flex-col items-center">
-                  <div className="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse mb-1"></div>
-                  <span className="text-[10px] font-mono text-slate-400">PLC STATE</span>
-                  <span className="text-[11px] font-mono font-bold text-slate-200">RUNNING</span>
-                </div>
-                <div className="bg-slate-900/60 rounded-xl p-3 border border-white/5 flex flex-col items-center">
-                  <div className="w-2.5 h-2.5 rounded-full bg-accentOrange-500 animate-ping mb-1"></div>
-                  <span className="text-[10px] font-mono text-slate-400">MQTT BROKER</span>
-                  <span className="text-[11px] font-mono font-bold text-accentOrange-400">ONLINE</span>
-                </div>
-                <div className="bg-slate-900/60 rounded-xl p-3 border border-white/5 flex flex-col items-center">
-                  <div className="w-2.5 h-2.5 rounded-full bg-blue-500 mb-1"></div>
-                  <span className="text-[10px] font-mono text-slate-400">HMI SCADA</span>
-                  <span className="text-[11px] font-mono font-bold text-slate-200">CONNECTED</span>
-                </div>
-              </div>
-
-              {/* IDE Code mock overlaid */}
-              <div className="bg-slate-950/80 rounded-xl p-4 border border-white/10 font-mono text-[11px] md:text-xs text-slate-300 relative overflow-hidden">
-                <div className="absolute top-0 right-0 p-2 text-white/5">
-                  <Code2 size={40} />
-                </div>
-                <div className="text-cyan-400">import <span className="text-slate-300">{"{ Controller }"}</span> from <span className="text-emerald-400">"@industrial/plc"</span>;</div>
-                <div className="text-cyan-400">import <span className="text-slate-300">{"{ Client }"}</span> from <span className="text-emerald-400">"mqtt"</span>;</div>
-                <div className="text-slate-500 mt-1">// Inicializar el Gateway IoT</div>
-                <div><span className="text-purple-400">const</span> broker = Client.connect(<span className="text-emerald-400">"mqtt://localhost"</span>);</div>
-                <div><span className="text-purple-400">const</span> ovenPlc = <span className="text-amber-400">new</span> <span className="text-yellow-300">Controller</span>(<span className="text-emerald-400">"192.168.1.10"</span>);</div>
-                <div className="text-slate-500 mt-1">// Sincronización en tiempo real</div>
-                <div>{"ovenPlc.on('temp_change', (temp) => {"}</div>
-                <div className="pl-4">broker.publish(<span className="text-emerald-400">'factory/temp'</span>, temp);</div>
-                <div className="pl-4"><span className="text-orange-400">ui.updateProgressBar</span>(temp);</div>
-                <div>{"});"}</div>
-              </div>
-
-              {/* Graphic representations: CPU + Gears */}
-              <div className="flex items-center justify-between bg-slate-900/40 border border-white/5 rounded-xl p-3">
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 rounded-lg bg-accentOrange-500/10 text-accentOrange-400">
-                    <Cpu size={18} />
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold text-slate-200">Hardware Gateway</div>
-                    <div className="text-[10px] text-slate-500">Siemens S7-1200 + Modbus</div>
-                  </div>
-                </div>
-                <div className="flex items-center space-x-3">
-                  <div className="p-2 rounded-lg bg-blue-500/10 text-blue-400">
-                    <Layers size={18} />
-                  </div>
-                  <div>
-                    <div className="text-xs font-semibold text-slate-200">Stack de Software</div>
-                    <div className="text-[10px] text-slate-500">React + NestJS + Docker</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Floating badge items */}
-          <motion.div
-            animate={{ y: [0, -10, 0] }}
-            transition={{ repeat: Infinity, duration: 6, ease: "easeInOut" }}
-            className="absolute top-8 -right-4 bg-[#111c33]/90 backdrop-blur border border-white/10 rounded-2xl p-3 flex items-center space-x-2.5 shadow-xl"
-          >
-            <div className="w-8 h-8 rounded-full bg-green-500/10 text-green-400 flex items-center justify-center">
-              <Cpu size={16} />
-            </div>
-            <div>
-              <div className="text-[11px] font-bold text-slate-200">PLC SIEMENS</div>
-              <div className="text-[9px] text-slate-500">Industrial Automation</div>
-            </div>
-          </motion.div>
-
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ repeat: Infinity, duration: 5, ease: "easeInOut", delay: 1 }}
-            className="absolute -bottom-4 -left-4 bg-[#111c33]/90 backdrop-blur border border-white/10 rounded-2xl p-3 flex items-center space-x-2.5 shadow-xl"
-          >
-            <div className="w-8 h-8 rounded-full bg-accentOrange-500/10 text-accentOrange-400 flex items-center justify-center">
-              <Code2 size={16} />
-            </div>
-            <div>
-              <div className="text-[11px] font-bold text-slate-200">FULL-STACK</div>
-              <div className="text-[9px] text-slate-500">Node, React, NestJS</div>
-            </div>
-          </motion.div>
+          <img
+            src={fotoPerfil}
+            alt="Juan David Betancur Valencia"
+            className="w-full max-w-md h-auto object-contain drop-shadow-[0_20px_50px_rgba(249,115,22,0.3)] z-10 relative"
+          />
+          {/* Efecto de brillo (blob) para integrar la imagen con el fondo oscuro */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-96 md:h-96 bg-orange-500/20 rounded-full blur-3xl -z-10"></div>
         </motion.div>
 
       </div>
