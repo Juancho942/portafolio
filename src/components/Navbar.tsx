@@ -64,11 +64,9 @@ export default function Navbar() {
           ))}
         </nav>
 
-        {/* CTA Contact Button */}
         <div className="hidden md:block">
           <a
-            href="#contacto"
-            onClick={(e) => handleScrollTo(e, '#contacto')}
+            href="mailto:proyectos@juandavidbetancurvalencia.com"
             className="inline-flex items-center space-x-2 bg-gradient-to-r from-accentOrange-600 to-accentOrange-500 hover:from-accentOrange-500 hover:to-accentOrange-600 text-white font-semibold px-5 py-2.5 rounded-full text-sm shadow-glow-orange hover:shadow-glow-orange-strong transform hover:-translate-y-0.5 transition-all duration-200"
           >
             <MessageSquare size={16} />
@@ -108,8 +106,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="#contacto"
-                onClick={(e) => handleScrollTo(e, '#contacto')}
+                href="mailto:proyectos@juandavidbetancurvalencia.com"
                 className="flex items-center justify-center space-x-2 bg-accentOrange-500 hover:bg-accentOrange-600 text-white font-semibold px-6 py-3 rounded-xl text-center shadow-lg transition-all duration-200"
               >
                 <MessageSquare size={18} />

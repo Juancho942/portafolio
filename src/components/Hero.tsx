@@ -75,8 +75,8 @@ export default function Hero() {
             </a>
 
             <a
-              href="/cv.pdf"
-              download
+              href="/CV_Juan_David_Betancur.pdf"
+              download="CV_Juan_David_Betancur.pdf"
               className="inline-flex justify-center items-center space-x-2 bg-white/5 hover:bg-white/10 text-slate-200 hover:text-white font-semibold px-8 py-3.5 rounded-xl border border-white/10 hover:border-white/20 transform hover:-translate-y-0.5 transition-all duration-200"
             >
               <span>Descargar CV</span>
@@ -85,7 +85,9 @@ export default function Hero() {
             {/* Social Icons (Prominent GitHub) */}
             <div className="flex items-center justify-center sm:justify-start space-x-4 sm:ml-4 mt-4 sm:mt-0">
               <a
-                href="#"
+                href="https://github.com/Juancho942"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center justify-center w-12 h-12 rounded-xl bg-accentOrange-500/10 hover:bg-accentOrange-500 border border-accentOrange-500/30 hover:border-accentOrange-500 text-accentOrange-400 hover:text-white shadow-glow-orange hover:shadow-glow-orange-strong transition-all duration-300"
                 aria-label="GitHub"
                 title="GitHub Perfil"
@@ -97,7 +99,9 @@ export default function Hero() {
               </a>
 
               <a
-                href="#"
+                href="https://www.linkedin.com/in/juan-david-betancur-valencia-132783393"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="group flex items-center justify-center w-12 h-12 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-slate-400 hover:text-white transition-all duration-300"
                 aria-label="LinkedIn"
                 title="LinkedIn Perfil"
@@ -114,9 +118,10 @@ export default function Hero() {
 
         {/* Right Column: Profile Photo */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.95 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8, delay: 0.2, type: 'spring' as const }}
           className="lg:col-span-5 relative flex justify-center items-center w-full mt-10 lg:mt-0"
         >
           <img

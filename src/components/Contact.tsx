@@ -51,7 +51,7 @@ export default function Contact() {
             {/* Direct Contact info cards */}
             <div className="space-y-4 pt-4">
               <a
-                href="mailto:judavid0802@gmail.com"
+                href="mailto:proyectos@juandavidbetancurvalencia.com"
                 className="group flex items-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5 hover:border-accentOrange-500/30 transition-all duration-300"
               >
                 <div className="p-3 rounded-xl bg-accentOrange-500/10 text-accentOrange-400 group-hover:bg-accentOrange-500 group-hover:text-white transition-all duration-300">
@@ -60,7 +60,7 @@ export default function Contact() {
                 <div>
                   <div className="text-[10px] uppercase font-bold tracking-wider text-slate-500">Enviar un Correo</div>
                   <div className="text-sm font-semibold text-slate-200 group-hover:text-white transition-colors">
-                    judavid0802@gmail.com
+                    proyectos@juandavidbetancurvalencia.com
                   </div>
                 </div>
               </a>
@@ -195,7 +195,9 @@ export default function Contact() {
           {/* Footer Social icons (Prominent GitHub) */}
           <div className="flex items-center space-x-3">
             <a
-              href="#"
+              href="https://github.com/Juancho942"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center justify-center w-9 h-9 rounded-xl bg-accentOrange-500/10 hover:bg-accentOrange-500 border border-accentOrange-500/30 hover:border-accentOrange-500 text-accentOrange-400 hover:text-white transition-all duration-300"
               aria-label="GitHub"
               title="GitHub"
@@ -207,7 +209,9 @@ export default function Contact() {
             </a>
 
             <a
-              href="#"
+              href="https://www.linkedin.com/in/juan-david-betancur-valencia-132783393"
+              target="_blank"
+              rel="noopener noreferrer"
               className="group flex items-center justify-center w-9 h-9 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 hover:border-white/20 text-slate-400 hover:text-white transition-all duration-300"
               aria-label="LinkedIn"
               title="LinkedIn"
