@@ -1,38 +1,28 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import AboutMe from './components/AboutMe';
-import Skills from './components/Skills';
-import Experience from './components/Experience';
-import Projects from './components/Projects';
+import Home from './pages/Home';
+import ProjectDetails from './pages/ProjectDetails';
 import Contact from './components/Contact';
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-[#090d16] text-slate-100 selection:bg-accentOrange-500/30 selection:text-white">
-      {/* Dynamic navbar container */}
-      <Navbar />
+    <Router>
+      <div className="relative min-h-screen bg-[#090d16] text-slate-100 selection:bg-accentOrange-500/30 selection:text-white">
+        {/* Global sticky header */}
+        <Navbar />
 
-      {/* Main pages container */}
-      <main>
-        {/* Hero entry section */}
-        <Hero />
-        
-        {/* Detailed professional bio */}
-        <AboutMe />
-        
-        {/* Skills Bento Box */}
-        <Skills />
-        
-        {/* Vertical Experience Timeline */}
-        <Experience />
-        
-        {/* Projects showcases */}
-        <Projects />
-        
-        {/* Interactive Contact Form & Footer */}
+        {/* Dynamic page routes */}
+        <main>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/proyectos/:id" element={<ProjectDetails />} />
+          </Routes>
+        </main>
+
+        {/* Global contact section & footer */}
         <Contact />
-      </main>
-    </div>
+      </div>
+    </Router>
   );
 }
 

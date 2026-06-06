@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { ExternalLink, Monitor, Server, Flame, Activity } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 interface Project {
   id: number;
@@ -280,14 +281,25 @@ export default function Projects() {
                     <span>Código</span>
                   </a>
                   {project.liveUrl && (
-                    <a
-                      href={project.liveUrl}
-                      className="flex items-center space-x-1 text-accentOrange-400 hover:text-accentOrange-500 text-xs font-semibold transition-colors duration-200"
-                      title="Ver demostración"
-                    >
-                      <ExternalLink size={14} />
-                      <span>Demo</span>
-                    </a>
+                    project.id === 1 ? (
+                      <Link
+                        to="/proyectos/jd-pos"
+                        className="flex items-center space-x-1.5 text-accentOrange-400 hover:text-accentOrange-500 text-xs font-semibold transition-colors duration-200"
+                        title="Ver caso de estudio de arquitectura"
+                      >
+                        <ExternalLink size={14} />
+                        <span>Detalles</span>
+                      </Link>
+                    ) : (
+                      <a
+                        href={project.liveUrl}
+                        className="flex items-center space-x-1.5 text-accentOrange-400 hover:text-accentOrange-500 text-xs font-semibold transition-colors duration-200"
+                        title="Ver demostración"
+                      >
+                        <ExternalLink size={14} />
+                        <span>Demo</span>
+                      </a>
+                    )
                   )}
                 </div>
               </div>
