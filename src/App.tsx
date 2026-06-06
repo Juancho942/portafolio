@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import ProjectDetails from './pages/ProjectDetails';
+import ProjectAccounting from './pages/ProjectAccounting';
 import Contact from './components/Contact';
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
+            <Route path="/proyectos/erp-contaduria" element={<ProjectAccounting />} />
             <Route path="/proyectos/:id" element={<ProjectDetails />} />
           </Routes>
         </main>
